@@ -1,15 +1,35 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+Create virtual machines (vm's) with ansible playbooks, on RHEL9, using qemu/kvm with libvirt and local .iso .qcow2 images
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+#to install epel repo on rhel9
+sudo subscription-manager repos --enable codeready-builder-for-rhel-9-$(arch)-rpms
+sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+
+sudo dnf install qemu-kvm libvirt virt-install
+#Install the necessary packages for QEMU-KVM and libvirt
+
+sudo systemctl start libvirtd
+sudo systemctl enable libvirtd
+#Start and enable the libvirtd service, which manages virtualization capabilities on your system
+
+sudo usermod -aG libvirt $(whoami)
+#Add your user account to the libvirt group to allow managing virtual machines without root privileges
+
+ansible --version
+virsh --version
+
+SSH key pair created for access to vm's
 
 Role Variables
 --------------
+ansible-galaxy role init kvm_provision (or which ever name you want)
+
+- Role kvm_provision was created successfully
 
 A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
