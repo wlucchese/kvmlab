@@ -1,44 +1,25 @@
 galaxy_info:
-  author: your name
-  description: your role description
-  company: your company (optional)
+  author: wlucchese
+  description: devops
+  company: Peraton
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker
 
-  # Choose a valid license ID from https://spdx.org - some suggested licenses:
-  # - BSD-3-Clause (default)
-  # - MIT
-  # - GPL-2.0-or-later
-  # - GPL-3.0-only
-  # - Apache-2.0
-  # - CC-BY-4.0
   license: license (GPL-2.0-or-later, MIT, etc)
 
+  RHEL: 9.2
   min_ansible_version: 2.1
+  ansible: core 2.14.2
+    python version: 3.11.2 (Red Hat 11.3.1-4)] (/usr/bin/python3.11)
+    jinja version: 3.1.2
 
-  # If this a Container Enabled role, provide the minimum Ansible Container version.
-  # min_ansible_container_version:
+  virsh version: 9.0.0
+  Python3: 3.9.16
+  # Added this to ansible_python_interpreter: /usr/bin/python3  # Add this line; adjust the path as necessary
 
-  #
-  # Provide a list of supported platforms, and for each platform a list of versions.
-  # If you don't wish to enumerate all versions for a particular platform, use 'all'.
-  # To view available platforms and versions (or releases), visit:
-  # https://galaxy.ansible.com/api/v1/platforms/
-  #
-  # platforms:
-  # - name: Fedora
-  #   versions:
-  #   - all
-  #   - 25
-  # - name: SomePlatform
-  #   versions:
-  #   - all
-  #   - 1.0
-  #   - 7
-  #   - 99.99
-
+ 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes
     # and categorizes the role. Users find roles by searching for tags. Be sure to
