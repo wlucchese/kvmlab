@@ -1,0 +1,27 @@
+---
+- name: Deploys VM based on cloud image
+  hosts: localhost
+  gather_facts: yes
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3  # Add this line; adjust the path as necessary
+    pool_dir: "/var/lib/libvirt/images"
+    vm: f34-lab01
+    vcpus: 2
+    ram_mb: 2048
+    cleanup: no
+    net: default
+    ssh_pub_key: "/home/wlucchese/.ssh/id_rsa.pub" #change path to ssh key storage
+
+  tasks:
+    - name: KVM Provision role
+      include_role:
+        name: kvm_provision
+      vars:
+        libvirt_pool_dir: "{{ pool_dir }}"
+        vm_name: "{{ vm }}"
+        vm_vcpus: "{{ vcpus }}"
+        vm_ram_mb: "{{ ram_mb }}"
+        vm_net: "{{ net }}"
+        cleanup_tmp: "{{ cleanup }}"
+        ssh_key: "{{ ssh_pub_key }}"
