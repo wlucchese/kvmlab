@@ -25,7 +25,31 @@ virsh --version
 
 SSH key pair created for access to vm's
 
-Role Variables
+Role Defaults
+--------------
+Determines where your image will be pulled from.
+
+Role Handlers
+--------------
+Not currently in use
+
+Role Meta
+--------------
+versions of software used in playbooks
+
+Role Tasks
+--------------
+Tasks used for creation of vm's
+
+Role Templates
+--------------
+Templates used for creation of vm's, best to use previous VM's to get exact specifications down
+
+Role Test
+--------------
+Not currently in use
+
+Role Vars/Variables
 --------------
 ansible-galaxy role init kvm_provision (or which ever name you want)
 
