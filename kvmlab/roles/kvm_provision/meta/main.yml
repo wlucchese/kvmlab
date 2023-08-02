@@ -20,7 +20,12 @@ galaxy_info:
   # Added this to ansible_python_interpreter: /usr/bin/python3  # Add this line; adjust the path as necessary
 
  
-  galaxy_tags: []
+  galaxy_tags: 
+    #ansible-galaxy collection list
+    #checks which collections are in ansible
+    # ansible-galaxy role init kvm_provision
+    # Role kvm_provision was created successfully
+
     # List tags for your role here, one per line. A tag is a keyword that describes
     # and categorizes the role. Users find roles by searching for tags. Be sure to
     # remove the '[]' above, if you add tags to this list.
@@ -28,6 +33,9 @@ galaxy_info:
     # NOTE: A tag is limited to a single word comprised of alphanumeric characters.
     #       Maximum 20 tags per role.
 
-dependencies: []
+dependencies: 
+   - libguestfs-tools
+   - python3-libvirt
+   
   # List your role dependencies here, one per line. Be sure to remove the '[]' above,
   # if you add dependencies to this list.
