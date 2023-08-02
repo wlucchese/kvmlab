@@ -1,9 +1,15 @@
 ---
 # defaults file for kvm_provision
 base_image_name: Fedora-Cloud-Base-34-1.2.x86_64.qcow2
-#base_image_name: CentOS-7-aarch64-GenericCloud-2003.qcow2
+# example base_image_name: CentOS-7-aarch64-GenericCloud-2003.qcow2
+
 base_image_url: https://download.fedoraproject.org/pub/fedora/linux/releases/34/Cloud/x86_64/images/{{ base_image_name }}
+#base_image_url: "file:///var/lib/libvirt/images/{{ base_image_name }}"
+#to grab from local
+
 base_image_sha: b9b621b26725ba95442d9a56cbaa054784e0779a9522ec6eafff07c6e6f717ea
+#variable used to verify the integrity of a downloaded file, nopt needed for local download
+
 libvirt_pool_dir: "/var/lib/libvirt/images"
 vm_name: centos_test1
 vm_vcpus: 2
