@@ -1,0 +1,19 @@
+---
+- name: Destroy VM
+  hosts: localhost
+  gather_facts: no
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    vm_name: "your_vm_name"
+#change name to name of vm
+  tasks:
+    - name: Shutdown VM
+      community.libvirt.virt:
+        name: "{{ vm_name }}"
+        state: destroyed
+
+    - name: Undefine VM
+      community.libvirt.virt:
+        name: "{{ vm_name }}"
+        command: undefine
